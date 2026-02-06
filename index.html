@@ -3,164 +3,280 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rilado</title>
+<title> ❤️</title>
 
 <style>
 body{
-  margin:0;
-  height:100vh;
-  background: linear-gradient(135deg,#161933,#3b3f7a);
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  font-family: 'Segoe UI', sans-serif;
-  color:white;
+ margin:0;
+ font-family:'Segoe UI',sans-serif;
+ scroll-behavior:smooth;
+ background:black;
+ color:white;
 }
 
-.container{
-  text-align:center;
+section{
+ min-height:100vh;
+ display:flex;
+ flex-direction:column;
+ justify-content:center;
+ align-items:center;
+ text-align:center;
+ padding:60px 25px;
+ box-sizing:border-box;
 }
 
-/* BOY */
-.boy{
-  position:relative;
-  width:160px;
-  margin:auto;
-  animation: float 3s ease-in-out infinite;
-}
+h1{font-size:38px;}
 
-/* HEAD */
-.head{
-  width:120px;
-  height:120px;
-  background:#ffddb8;
-  border-radius:50%;
-  margin:auto;
-  position:relative;
-}
+p{max-width:600px;line-height:1.6;font-size:18px;}
 
-/* HAIR */
-.hair{
-  position:absolute;
-  top:-12px;
-  left:0;
-  width:120px;
-  height:55px;
-  background:#1f1f1f;
-  border-radius:60px 60px 45px 45px;
-}
+.scene1{background:linear-gradient(120deg,#ff9a9e,#fad0c4);} 
+.scene2{background:linear-gradient(120deg,#667eea,#764ba2);} 
+.scene3{background:linear-gradient(120deg,#ff758c,#ff7eb3);} 
+.scene4{background:linear-gradient(120deg,#1d2671,#c33764);} 
+.scene5{background:linear-gradient(120deg,#232526,#414345);} 
 
-/* EYES */
-.eye{
-  width:10px;
-  height:14px;
-  background:#000;
-  border-radius:50%;
-  position:absolute;
-  top:48px;
-  animation: blink 4s infinite;
-}
-.eye.left{ left:35px; }
-.eye.right{ right:35px; }
-
-@keyframes blink{
-  0%,95%,100%{ height:14px; }
-  96%,99%{ height:2px; }
-}
-
-/* MOUTH */
-.mouth{
-  width:40px;
-  height:22px;
-  border:3px solid transparent;
-  border-top:none;
-  border-radius:0 0 40px 40px;
-  border-bottom:3px solid #000;
-  position:absolute;
-  bottom:28px;
-  left:50%;
-  transform:translateX(-50%) rotate(180deg);
-  transition:all 1.2s ease;
-}
-/* BODY */
-.body{
-  width:90px;
-  height:85px;
-  background:#4a6cff;
-  border-radius:0 0 25px 25px;
-  margin:-5px auto 0;
-}
-
-/* SMILE STATE */
-.smile .mouth{
-  transform:translateX(-50%) rotate(0deg);
-}
-
-/* TEXT */
-.text{
-  margin-top:25px;
-  font-size:20px;
-  min-height:30px;
+.character{
+ font-size:85px;
+ animation:float 3s infinite;
+ margin-bottom:10px;
 }
 
 @keyframes float{
-  0%,100%{ transform:translateY(0); }
-  50%{ transform:translateY(-8px); }
+0%,100%{transform:translateY(0)}
+50%{transform:translateY(-15px)}
 }
+
+button{
+ padding:14px 28px;
+ border:none;
+ border-radius:30px;
+ font-size:18px;
+ margin-top:20px;
+ cursor:pointer;
+ transition: all 0.3s ease;
+ display:inline-block;
+ position:relative;
+ z-index:2;
+}
+
+button:hover{
+ transform: scale(1.08);
+ box-shadow:0 6px 20px rgba(0,0,0,0.3);
+}
+
+.next{background:#ff4d6d;color:white;}
+.no{
+ background:black;
+ color:white;
+ position:relative;
+}
+
+.popup{
+ position:fixed;
+ top:50%;
+ left:50%;
+ transform:translate(-50%,-50%);
+ background:white;
+ color:black;
+ padding:25px;
+ border-radius:20px;
+ display:none;
+ z-index:10;
+}
+
+.sunflower{
+ font-size:80px;
+ cursor:pointer;
+ margin-top:20px;
+ transition: transform 0.3s ease;
+}
+
+.sunflower:hover{
+ transform: scale(1.2);
+}
+
+.scene-photo{
+ margin:20px 0;
+ max-width:280px;
+}
+
+.scene-photo img{
+ width:100%;
+ border-radius:20px;
+ box-shadow:0 4px 15px rgba(0,0,0,0.5);
+ transition: transform 0.4s ease;
+}
+
+.scene-photo img:hover{
+ transform: scale(1.05);
+}
+
+
+
+.proposal-buttons{
+ margin-top:30px;
+ display:flex;
+ gap:20px;
+ justify-content:center;
+ align-items:center;
+ position:relative;
+ height:auto;
+}
+
 </style>
 </head>
 
 <body>
-<div class="container">
 
-  <div class="boy" id="boy">
-    <div class="head">
-      <div class="hair"></div>
-      <div class="eye left"></div>
-      <div class="eye right"></div>
-      <div class="mouth"></div>
-    </div>
-    <div class="body"></div>
-  </div>
+<!-- INTRO -->
+<section class="scene1">
+<h1>Hey You ❤️</h1>
+<div class="character"> </div>
+<div class="scene-photo">
+<img src="intro.jpeg" alt="Intro Photo">
+</div>
+<p>
+Hey… don't be sad 😤<br><br>
+If you smile… I'll tell you a secret 🤫<br><br>
+Actually… Bro knows my weakness.<br>
+One smile from you and I melt like ice cream in Chennai summer 🍦☀️<br><br>
+So smile da… otherwise I will keep staring at you like a psycho until you laugh 😌
+</p>
+<button class="next" onclick="go(2)">Okay Fine… I'll Smile ▶</button>
+</section>
 
-  <div class="text" id="text"></div>
+<!-- HOW WE MET -->
+<section class="scene2">
+<h1>A Small Thought For You ✨</h1>
+<div class="scene-photo">
+<img src="meet.jpeg" alt="Meet Photo">
+</div>
+<p>
+I know you are atheist 😌<br>
+And yes… I know you will roll your eyes if I start preaching 😒😂<br><br>
+But listen… this is not religion talk… this is "Jushi's Protection Plan" 💪😤<br><br>
+You love the song "Thai pola thetri"பெலவீன நேரம் என் கிருபை உனக்கு போதும்
+உன் பெலவீனத்தில் என்பெலன் தருவேன் என்றிர்
+நிழல் போல என் வாழ்வில் வருபவரே
+விலகாமல் துணை நின்று காப்பவரே right…<br>
+Even if you don’t believe… someone is still protecting you.<br><br>
+Same concept here 😌<br>
+You don’t have to believe in God…
+But I pray for you daily like attendance marking 🙏😂<br><br>
+The stone the builders rejected
+has become the cornerstone;<br>
+— Psalm 118:22<br><br>
+But while he was still a long way off, his father saw him and was filled with compassion for him; <br>
+he ran to his son, threw his arms around him and kissed him.<br>
+- Luke 15:20 <br> <br>
+So relax…
+Between God’s plan and my stubborn prayers… Jushi jebamalaiya urturuna avolothaa ellarum gaali😌
+You are double protected mister 😌❤️<br>
+No evil can touch you…
+You are meant to shine ✨
+</p>
+<button class="next" onclick="go(3)">say - Okay Madam… Continue Story ▶</button>
+</section>
 
+<!-- MEMORIES -->
+<section class="scene3">
+<h1>Nee evolo alaguu theriyumaaaa 😌</h1>
+<div class="scene-photo">
+<img src="memories.jpeg" alt="Memories Photo">
+</div>
+<p>
+அவன் கோவம் கூட அழகாகும் தல கோதும் ஸ்டைலலில்
+அலைமோதும் இதயம் முழுதும் அவன் தான் இருக்கான்
+என்னத்த செய்ய நானும்<br>
+nerupa erupan intha pattu kelu <br>
+En alagiiiiiiii ❤️ En Thangoooo😙<br>
+I fell for your smile…<br>
+Your messy hair after sleep…<br>
+The way you sleep like a baby…<br>
+And the way you hold my hand like I am your world.
+you made me feel loved. 
+wokkali valkai la ethuvum venna da Ivan pothum da nu nenaika vachuta.
+</p>
+<button class="next" onclick="go(4)">Next ▶</button>
+</section>
+
+<!-- MOTIVATION -->
+<section class="scene4">
+<h1>For My Hardworking Boy 💪❤️</h1>
+<div class="character">👨‍💻✨</div>
+<p>
+I know work makes you tired sometimes…<br>
+But you are stronger than you think.<br><br>
+You always say I am your lucky charm…<br>
+But truth is… Watching you fight life bravely makes ME proud.<br><br>
+Even on your worst days… You are still my best person.
+Na konjam kiruku thaa ana nee enna pannalum en support unnaku thaaa 
+ana plz DMK mattum vote pannatha sollatha🫣
+</p>
+<button class="next" onclick="go(5)">Next ▶</button>
+</section>
+
+<!-- PROPOSAL -->
+<section class="scene5">
+<h1>My Love For You 🌊</h1>
+<div class="scene-photo">
+<img src="poem.jpg" alt="Poem Photo">
+</div>
+<p>
+காதலை அறியாத என் அழகிய பேதையே<br>
+உன் மேல் நான் கொண்ட காதலோ ஆழீயின் ஆழம் 🌊
+
+நெஞ்சம் ஒருமுறை நீ என்றது<br> உள்ளம் உனக்குத்தான் என்றது-- avolothaaaa<br>
+sunflower ah click pannu man
+</p>
+
+<div class="sunflower" onclick="openProposal()">🌻</div>
+
+<p id="proposalText" style="display:none;">
+Like sunflower follows the sun…<br>
+I follow you with my whole heart ❤️<br><br>
+Santhosama erupiya olunga sapuduviya thoonguviya?
+</p>
+
+<div class="proposal-buttons">
+<button class="next" onclick="yesClicked()">YES ❤️</button>
+<button class="no" id="noBtn">NO 😜</button>
+</div>
+</section>
+
+<div class="popup" id="popup">
+You make me proud. You make me smile.<br>
+You make my life beautiful ❤️🌻
+just by staying happy and eating well and sleeping. 
 </div>
 
+<audio id="music" src="music.mp3"></audio>
+
 <script>
-const lines = [
-  "Nee siricha alaga erupa paari!",
-  "'1008 problem'-avan kedakan",
-  "'wokkali na pakatha prechanaiya attitude' - ithu nala eruku",
-  "'Marakama visil 🥳 chinnathutu vote pannirunga' varata mameyy durrrr"
-];
 
-let lineIndex = 0;
-let charIndex = 0;
-const textEl = document.getElementById("text");
-
-function typeLine(){
-  if(charIndex < lines[lineIndex].length){
-    textEl.innerHTML += lines[lineIndex].charAt(charIndex);
-    charIndex++;
-    setTimeout(typeLine, 60);
-  } else {
-    setTimeout(()=>{
-      textEl.innerHTML = "";
-      charIndex = 0;
-      lineIndex++;
-      if(lineIndex < lines.length){
-        typeLine();
-      }
-    }, 1500);
-  }
+function go(n){
+ const sections=document.querySelectorAll('section');
+ if(sections[n-1]) sections[n-1].scrollIntoView({behavior:'smooth'});
 }
 
-setTimeout(typeLine, 1200);
+function openProposal(){
+ document.getElementById('proposalText').style.display='block';
+ document.getElementById('music').play();
+}
 
-setTimeout(()=>{
-  document.getElementById("boy").classList.add("smile");
-}, 4200);
+function yesClicked(){
+ document.getElementById('popup').style.display='block';
+}
+
+const noBtn=document.getElementById('noBtn');
+if(noBtn){
+ noBtn.addEventListener('mouseover',()=>{
+  noBtn.style.position='absolute';
+  noBtn.style.left=Math.random()*200+'px';
+  noBtn.style.top=Math.random()*80+'px';
+ });
+}
+
 </script>
 
 </body>
